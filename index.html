@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Saúde em Pitanga - Paraná</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      padding: 20px;
+      margin: 0;
+    }
+    header {
+      background: #00796b;
+      padding: 15px;
+      text-align: center;
+    }
+    header nav button {
+      background: none;
+      border: none;
+      color: white;
+      font-weight: bold;
+      margin: 0 10px;
+      padding: 8px 15px;
+      cursor: pointer;
+      font-size: 1em;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    header nav button:hover,
+    header nav button.active {
+      background-color: #004d40;
+    }
+    main {
+      background: white;
+      padding: 20px;
+      margin-top: 15px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #ccc;
+      min-height: 150px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <button class="active" onclick="showPage('problema')">Problema</button>
+      <button onclick="showPage('solucao')">Solução</button>
+      <button onclick="showPage('rentabilidade')">Rentabilidade</button>
+      <button onclick="showPage('concorrentes')">Concorrentes</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="problema">
+      <h1>Problema</h1>
+      <p>Pitanga enfrenta dificuldades na área da saúde pública, como falta de infraestrutura adequada e escassez de profissionais médicos, o que gera demora no atendimento e insatisfação da população.</p>
+    </section>
+
+    <section id="solucao" style="display:none">
+      <h1>Solução</h1>
+      <p>Investimento na modernização das unidades de saúde, contratação de mais profissionais qualificados e implementação de sistemas digitais para agilizar o atendimento e melhorar a gestão dos recursos.</p>
+    </section>
+
+    <section id="rentabilidade" style="display:none">
+      <h1>Rentabilidade</h1>
+      <p>Melhorias na saúde pública resultam em redução de custos com tratamentos emergenciais e internações, além de aumentar a produtividade da população e a satisfação social, gerando retorno positivo para o município.</p>
+    </section>
+
+    <section id="concorrentes" style="display:none">
+      <h1>Concorrentes</h1>
+      <p>Outros municípios próximos investem em tecnologia e parcerias público-privadas na saúde, oferecendo serviços mais eficientes e especializados. Pitanga deve se diferenciar pela atenção humanizada e inovação local.</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Saúde Pitanga - Todos os direitos reservados
+  </footer>
+
+  <script>
+    function showPage(page) {
+      // Esconde todas as seções
+      const sections = document.querySelectorAll('main section');
+      sections.forEach(sec => {
+        sec.style.display = 'none';
+      });
+
+      // Remove 'active' de todos os botões
+      const buttons = document.querySelectorAll('header nav button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      // Mostra a seção selecionada
+      document.getElementById(page).style.display = 'block';
+
+      // Marca o botão clicado como ativo
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+</body>
+</html>
